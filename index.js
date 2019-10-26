@@ -5,25 +5,26 @@ const withViewportSize = WrappedComponent => {
     constructor(props) {
       super(props);
       this.state = { width: 0, height: 0 };
+      this.updateViewportDimensions = this.updateViewportDimensions.bind(this);
     }
 
-    componentDidMount = () => {
+    componentDidMount() {
       this.updateViewportDimensions();
       window.addEventListener('resize', this.updateViewportDimensions);
-    };
+    }
 
-    componentWillUnmount = () => {
+    componentWillUnmount() {
       window.removeEventListener('resize', this.updateViewportDimensions);
-    };
+    }
 
-    updateViewportDimensions = () => {
+    updateViewportDimensions() {
       this.setState({ width: window.innerWidth, height: window.innerHeight });
-    };
+    }
 
-    render = () => {
+    render() {
       const { width, height } = this.state;
       return <WrappedComponent {...this.props} viewport={{ width, height }} />;
-    };
+    }
   }
 
   return ViewportSize;
