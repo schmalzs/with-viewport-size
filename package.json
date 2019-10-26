@@ -1,12 +1,23 @@
 {
   "name": "with-viewport-size",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Utility to pass viewport size to React components",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": "https://github.com/schmalzs/with-viewport-size.git",
   "author": "Scott Schmalz <scott.schmalz@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "rollup -c"
+  },
   "dependencies": {
     "react": "^16.11.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "rollup": "^1.25.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-node-resolve": "^5.2.0"
   }
 }
