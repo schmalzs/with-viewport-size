@@ -1,6 +1,6 @@
 {
   "name": "with-viewport-size",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utility to pass viewport size to React components",
   "main": "index.js",
   "repository": "https://github.com/schmalzs/with-viewport-size.git",
