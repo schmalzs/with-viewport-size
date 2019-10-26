@@ -134,7 +134,6 @@ var withViewportSize = function withViewportSize(WrappedComponent) {
     }, {
       key: "render",
       value: function render() {
-        console.info('asdfadsfadsfads');
         var _this$state = this.state,
             width = _this$state.width,
             height = _this$state.height;
