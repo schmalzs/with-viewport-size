@@ -93,9 +93,7 @@ function _possibleConstructorReturn(self, call) {
 }
 
 var withViewportSize = function withViewportSize(WrappedComponent) {
-  var ViewportSize =
-  /*#__PURE__*/
-  function (_PureComponent) {
+  var ViewportSize = /*#__PURE__*/function (_PureComponent) {
     _inherits(ViewportSize, _PureComponent);
 
     function ViewportSize(props) {
