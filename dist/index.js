@@ -1,9 +1,10 @@
 'use strict';
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
 var React = require('react');
-var React__default = _interopDefault(React);
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -76,6 +77,19 @@ function _setPrototypeOf(o, p) {
   return _setPrototypeOf(o, p);
 }
 
+function _isNativeReflectConstruct() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
+
+  try {
+    Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
 function _assertThisInitialized(self) {
   if (self === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -92,16 +106,37 @@ function _possibleConstructorReturn(self, call) {
   return _assertThisInitialized(self);
 }
 
+function _createSuper(Derived) {
+  var hasNativeReflectConstruct = _isNativeReflectConstruct();
+
+  return function _createSuperInternal() {
+    var Super = _getPrototypeOf(Derived),
+        result;
+
+    if (hasNativeReflectConstruct) {
+      var NewTarget = _getPrototypeOf(this).constructor;
+
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+
+    return _possibleConstructorReturn(this, result);
+  };
+}
+
 var withViewportSize = function withViewportSize(WrappedComponent) {
   var ViewportSize = /*#__PURE__*/function (_PureComponent) {
     _inherits(ViewportSize, _PureComponent);
+
+    var _super = _createSuper(ViewportSize);
 
     function ViewportSize(props) {
       var _this;
 
       _classCallCheck(this, ViewportSize);
 
-      _this = _possibleConstructorReturn(this, _getPrototypeOf(ViewportSize).call(this, props));
+      _this = _super.call(this, props);
       _this.state = {
         width: 0,
         height: 0
@@ -135,7 +170,7 @@ var withViewportSize = function withViewportSize(WrappedComponent) {
         var _this$state = this.state,
             width = _this$state.width,
             height = _this$state.height;
-        return React__default.createElement(WrappedComponent, _extends({}, this.props, {
+        return /*#__PURE__*/React__default['default'].createElement(WrappedComponent, _extends({}, this.props, {
           viewport: {
             width: width,
             height: height
